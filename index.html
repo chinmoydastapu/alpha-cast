@@ -50,8 +50,24 @@
 
         <!-- News section -->
         <section class="container">
-            <div id="news-container" class="">
-
+            <div id="news-container">
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="newsModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-container">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -62,6 +78,7 @@
     <!-- Linking with custom JS files -->
     <script src="js/categories.js"></script>
     <script src="js/news.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>
