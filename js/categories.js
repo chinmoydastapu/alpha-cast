@@ -1,9 +1,14 @@
 //Loading Categories from All News Category
 const loadCat = async () => {
-    const url = 'https://openapi.programming-hero.com/api/news/categories';
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCat(data.data.news_category);
+    try {
+        const url = 'https://openapi.programming-hero.com/api/news/categories';
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCat(data.data.news_category);
+    }
+    catch (error) {
+        console.log('An Error Occurred: ', error);
+    }
 };
 
 // Display Categories below header section
@@ -12,12 +17,26 @@ const displayCat = categories => {
         const categoriesContainer = document.getElementById('categories-container');
         const div = document.createElement('div');
         div.innerHTML = `
-        <li class="nav-item">
+        <li class="nav-item active-category">
             <a id="starting-page" class="nav-link" href="#" onclick="loadNews('${category.category_id}')">${category.category_name}</a>
         </li>
         `;
         categoriesContainer.appendChild(div);
     });
+
+    // Active category detected
+    const activeClassNames = document.getElementsByClassName('active-category');
+    let prevVisited;
+    const a = activeClassNames[7].children[0];
+    a.classList.add('text-primary');
+    for(const c of activeClassNames) {
+        c.addEventListener('click', function(e) {
+            a.classList.remove('text-primary');
+            prevVisited ? prevVisited.classList.remove('text-primary') : '';
+            e.target.classList.add('text-primary');
+            prevVisited = e.target;
+        });
+    }
 };
 
 loadCat();

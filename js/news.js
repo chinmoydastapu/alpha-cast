@@ -1,18 +1,27 @@
+let countItems;
+
 // Loading news from All news in a Category API
 const loadNews = catId => {
     // Start Spinner
     toggleSpinner(true);
     fetch(`https://openapi.programming-hero.com/api/news/category/${catId}`)
-    .then(res => res.json())
-    .then(data => displayNews(data.data));
+        .then(res => res.json())
+        .then(data => displayNews(data.data))
+        .catch(error => console.log('An Error Occurred: ', error));
 };
 
 // Showing the results
 const displayNews = data => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
+
+    // Sorting the data
+    console.log(data);
+    data.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+
     data.forEach(d => {
-        // console.log(d);
         const div = document.createElement('div');
         div.classList.add('card');
         div.classList.add('mt-3');
@@ -24,7 +33,7 @@ const displayNews = data => {
             <div class="col-lg-9">
                 <div class="card-body">
                     <h5 class="card-title">${d.title}</h5>
-                    <p class="card-text">${d.details.slice(0, 200)} <br><br> ${d.details.length > 100 ? d.details.slice(200, 300)+' . . .' : d.details}</p>
+                    <p class="card-text">${d.details.slice(0, 200)} <br><br> ${d.details.length > 100 ? d.details.slice(200, 300) + ' . . .' : d.details}</p>
                     <div class="pt-3 row row-cols-1 g-4 text-center">
                         <div class="col-md-5 col-xl-4 d-md-flex align-items-center">
                             <img class="img-fluid rounded-circle w-25 me-2" src="${d.author.name !== null ? d.author.img : ''}">
@@ -35,7 +44,7 @@ const displayNews = data => {
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
                             <i class="fa-solid fa-eye me-1"></i>
-                            <b class="fs-8">${d.total_view}</b>
+                            <b class="fs-8">${d.total_view}k</b>
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
                             <i class="fa-solid fa-star me-1"></i>
@@ -51,13 +60,29 @@ const displayNews = data => {
         `;
         newsContainer.appendChild(div);
     });
+
+    // If there is no items available
+    countItems = data.length;
+    const countItemsContainer = document.getElementById('count-items-container');
+    countItemsContainer.innerHTML = '';
+
+    const countItemsDiv = document.createElement('div');
+
+    countItemsDiv.classList.add('card');
+    countItemsDiv.classList.add('my-4');
+    countItemsDiv.innerHTML = `
+    <div class="card-body">
+        <b>${countItems}</b> items has been found. 
+    </div>
+    `;
+    countItemsContainer.appendChild(countItemsDiv);
     // Stop Spinner
     toggleSpinner(false);
 };
 
 const toggleSpinner = spin => {
     const spinner = document.getElementById('spinner');
-    if(spin) {
+    if (spin) {
         spinner.classList.remove('d-none');
     } else {
         spinner.classList.add('d-none');
@@ -67,6 +92,6 @@ const toggleSpinner = spin => {
 // When website opened, load just "Breaking News" Category
 let startingPage = true;
 
-if(startingPage) {
+if (startingPage) {
     loadNews('08');
 }
