@@ -8,6 +8,8 @@
     <title>Alpha Cast</title>
     <!-- Linking with custom CSS -->
     <link rel="stylesheet" href="styles/style.css">
+    <!-- Linking with Font Awesome kit CDN -->
+    <script src="https://kit.fontawesome.com/894374ca54.js" crossorigin="anonymous"></script>
     <!-- Linking with Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
@@ -23,8 +25,18 @@
         </div>
         <hr>
         <!-- Displaying categories -->
-        <div id="categories-container" class="d-none container d-flex justify-content-between align-items-center">
-        </div>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="categories-container">
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -39,7 +51,7 @@
         <!-- News section -->
         <section class="container">
             <div id="news-container" class="">
-                
+
             </div>
         </section>
     </main>
