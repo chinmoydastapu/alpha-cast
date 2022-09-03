@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,57 +13,117 @@
     <!-- Linking with Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
-<body>
+
+<body class="bg-light">
     <header class="container pt-3">
         <div class="p-3 d-flex justify-content-between align-items-center">
-            <h5><span class="bg-primary text-light p-1 rounded">Alpha</span> Cast</h5>
-            <div class="row top-nav">
+            <h5><span class="bg-primary text-light p-1 rounded"
+                    style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Alpha</span>
+                <span class="text-primary">Cast</span>
+            </h5>
+            <div class="row">
                 <h6 class="col-6 home-nav"><a href="index.html" class="text-decoration-none text-dark">Home</a></h6>
                 <h6 class="col-6 blog-nav"><a href="blog.html" class="text-decoration-none">Blog</a></h6>
             </div>
         </div>
         <hr>
+    </header>
 
-        <!-- blog section here -->
-        <section class="container">
-            <div class="row">
+    <!-- blog section here -->
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-12 my-4">
+                <div class="card">
+                    <h5 class="card-header text-center">Question-1</h5>
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">What is the main differences among var, let and const?</h5>
+                        <p class="card-text"><b>Var: </b>Before the advent of ES6, var declarations ruled. There are
+                            issues associated with variables declared with var, though. That is why it was necessary for
+                            new ways to declare variables to emerge. First, let's get to understand var more before we
+                            discuss those issues.
+                        </p>
+                        <p class="card-text"><b>Let: </b>let is now preferred for variable declaration. It's no surprise
+                            as it comes as an improvement to var declarations. It also solves the problem with var that
+                            we just covered. Let's consider why this is so.</p>
+                        <p class="card-text"><b>Const: </b>Variables declared with the const maintain constant values.
+                            const declarations share some similarities with let declarations. Like let declarations,
+                            const declarations can only be accessed within the block they were declared.</p>
+                    </div>
+                </div>
                 <div class="col-lg-12 my-4">
                     <div class="card">
-                        <h5 class="card-header text-center">Featured</h5>
+                        <h5 class="card-header text-center">Question-2</h5>
                         <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title mb-4">What is the differences between Arrow Function and Regular
+                                Function?</h5>
+                            <p class="card-text"><b>Arrow Functin: </b>Arrow functions are a new way to write anonymous
+                                function expressions, and are similar to lambda functions in some other programming
+                                languages, such as Python. Arrow functions differ from traditional functions in a number
+                                of ways, including the way their scope is determined and how their syntax is expressed.
+                            </p>
+                            <p class="card-text"><b>Regular Function: </b>Regular functions created using function
+                                declarations or expressions are constructible and callable. Since regular functions are
+                                constructible, they can be called using the new keyword. However, the arrow functions
+                                are only callable and not constructible, i.e arrow functions can never be used as
+                                constructor functions.</p>
                         </div>
-                      </div>
-                <div class="col-lg-12 my-4">
-                    <div class="card">
-                        <h5 class="card-header text-center">Featured</h5>
-                        <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="col-lg-12 my-4">
+                        <div class="card">
+                            <h5 class="card-header text-center">Question-3</h5>
+                            <div class="card-body">
+                                <h5 class="card-title mb-4">What is the differences among map(), forEach(), filter() and
+                                    find()?</h5>
+                                <p class="card-text"><b>map(): </b>JavaScript Map creates a new array, which contains
+                                    the results from the iteration over the elements of the array and calls the provided
+                                    function once for each element in order. It's an important data structure that has
+                                    many essential uses.</p>
+                                <p class="card-text"><b>forEach(): </b>The forEach method is also used to loop through
+                                    arrays, but it uses a function differently than the classic "for loop". The forEach
+                                    method passes a callback function for each element of an array together with the
+                                    following parameters: Current Value (required) - The value of the current array
+                                    element.</p>
+                                <p class="card-text"><b>filter(): </b>Internally, the filter() method iterates over each
+                                    element of the array and passes each element to the callback function. If the
+                                    callback function returns true , it includes the element in the return array. The
+                                    filter() method accepts two named arguments: a callback function and an optional
+                                    object.</p>
+                                <p class="card-text"><b>find(): </b>The find() method returns the value of the first
+                                    element that passes a test. The find() method executes a function for each array
+                                    element. The find() method returns undefined if no elements are found.</p>
+                            </div>
                         </div>
-                      </div>
-                <div class="col-lg-12 my-4">
-                    <div class="card">
-                        <h5 class="card-header text-center">Featured</h5>
-                        <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="col-lg-12 my-4">
+                            <div class="card">
+                                <h5 class="card-header text-center">Question-4</h5>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Why do we use Template String?</h5>
+                                    <p class="card-text"><b>Template String: </b>Template strings are a powerful feature
+                                        of modern JavaScript released in ES6. It lets us insert/interpolate variables
+                                        and expressions into strings without needing to concatenate like in older
+                                        versions of JavaScript. It allows us to create strings that are complex and
+                                        contain dynamic elements. Besides, Template literals provide an easy way to
+                                        interpolate variables and expressions into strings. The method is called string
+                                        interpolation. Below are the most reasons to use Template Strings -
+                                    <ol type="i">
+                                        <li>String interpolation</li>
+                                        <li>Embedded expressions</li>
+                                        <li>Multiline strings without hacks</li>
+                                        <li>String formatting</li>
+                                        <li>String tagging for safe HTML escaping, localization and many more.</li>
+                                    </ol>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                <div class="col-lg-12 my-4">
-                    <div class="card">
-                        <h5 class="card-header text-center">Featured</h5>
-                        <div class="card-body">
-                          <h5 class="card-title">Special title treatment</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                      </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Linking with Bootstrap JS CDN -->
+    <!-- Linking with Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -37,11 +37,11 @@ const showModal = async (id) => {
                 </div>
             </div>
             <div class="col-md-3 d-md-flex align-items-center">
-                <i class="fa-solid fa-eye me-1"></i>
+                <i class="fa-solid fa-eye me-1 text-primary"></i>
                 <b class="fs-8">${data.data[0].total_view === null ? '0' : data.data[0].total_view}k</b>
             </div>
             <div class="col-md-3 d-md-flex align-items-center">
-                <i class="fa-solid fa-star me-1"></i>
+                <i class="fa-solid fa-star text-warning"></i>
                 <b class="fs-8">${data.data[0].rating.number}</b>
             </div>
         </div>
