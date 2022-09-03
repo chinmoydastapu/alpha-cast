@@ -1,5 +1,7 @@
 // Loading news from All news in a Category API
 const loadNews = catId => {
+    // Start Spinner
+    toggleSpinner(true);
     fetch(`https://openapi.programming-hero.com/api/news/category/${catId}`)
     .then(res => res.json())
     .then(data => displayNews(data.data));
@@ -49,6 +51,17 @@ const displayNews = data => {
         `;
         newsContainer.appendChild(div);
     });
+    // Stop Spinner
+    toggleSpinner(false);
+};
+
+const toggleSpinner = spin => {
+    const spinner = document.getElementById('spinner');
+    if(spin) {
+        spinner.classList.remove('d-none');
+    } else {
+        spinner.classList.add('d-none');
+    }
 };
 
 // When website opened, load just "Breaking News" Category
