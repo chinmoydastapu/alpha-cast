@@ -18,7 +18,7 @@ const displayCat = categories => {
         const div = document.createElement('div');
         div.innerHTML = `
         <li class="nav-item active-category">
-            <a id="starting-page" class="nav-link" href="#" onclick="loadNews('${category.category_id}')">${category.category_name}</a>
+            <a id="starting-page" class="nav-link ms-lg-4 ms-md-2" href="#" onclick="loadNews('${category.category_id}')">${category.category_name}</a>
         </li>
         `;
         categoriesContainer.appendChild(div);
