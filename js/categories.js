@@ -24,16 +24,28 @@ const displayCat = categories => {
         categoriesContainer.appendChild(div);
     });
 
-    // Active category detected
+    // Active category detected and styled
     const activeClassNames = document.getElementsByClassName('active-category');
     let prevVisited;
     const a = activeClassNames[7].children[0];
     a.classList.add('text-primary');
+    a.classList.add('border');
+    a.classList.add('border-primary');
+    a.classList.add('rounded-pill');
     for(const c of activeClassNames) {
         c.addEventListener('click', function(e) {
             a.classList.remove('text-primary');
+            a.classList.remove('border');
+            a.classList.remove('border-primary');
+            a.classList.remove('rounded-pill');
             prevVisited ? prevVisited.classList.remove('text-primary') : '';
+            prevVisited ? prevVisited.classList.remove('border') : '';
+            prevVisited ? prevVisited.classList.remove('border-primary') : '';
+            prevVisited ? prevVisited.classList.remove('rounded-pill') : '';
             e.target.classList.add('text-primary');
+            e.target.classList.add('border');
+            e.target.classList.add('border-primary');
+            e.target.classList.add('rounded-pill');
             prevVisited = e.target;
         });
     }

@@ -16,7 +16,6 @@ const displayNews = data => {
     newsContainer.innerHTML = '';
 
     // Sorting the data
-    console.log(data);
     data.sort((a, b) => {
         return b.total_view - a.total_view;
     });
@@ -44,7 +43,7 @@ const displayNews = data => {
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
                             <i class="fa-solid fa-eye me-1"></i>
-                            <b class="fs-8">${d.total_view}k</b>
+                            <b class="fs-8">${d.total_view === null ? '0' : d.total_view}k</b>
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
                             <i class="fa-solid fa-star me-1"></i>
@@ -72,7 +71,7 @@ const displayNews = data => {
     countItemsDiv.classList.add('my-4');
     countItemsDiv.innerHTML = `
     <div class="card-body">
-        <b>${countItems}</b> items has been found. 
+        <b>${countItems}</b> items have been found. 
     </div>
     `;
     countItemsContainer.appendChild(countItemsDiv);
@@ -89,9 +88,5 @@ const toggleSpinner = spin => {
     }
 };
 
-// When website opened, load just "Breaking News" Category
-let startingPage = true;
-
-if (startingPage) {
-    loadNews('08');
-}
+// When website opened, load just "All news" Category
+loadNews('08');
