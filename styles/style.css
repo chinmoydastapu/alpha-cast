@@ -3,3 +3,7 @@ p{
     color: rgba(78, 76, 76, 0.511);
     font-family: Arial, Helvetica, sans-serif;
 }
+.home-nav{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
