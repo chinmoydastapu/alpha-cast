@@ -24,8 +24,9 @@ const displayNews = data => {
         const div = document.createElement('div');
         div.classList.add('card');
         div.classList.add('mt-3');
+        div.classList.add('border-0');
         div.innerHTML = `
-        <div class="row g-0 p-3" data-bs-toggle="modal" data-bs-target="#newsModal" onclick="showModal('${d._id}')">
+        <div class="row g-0 p-3 shadow-sm" data-bs-toggle="modal" data-bs-target="#newsModal" onclick="showModal('${d._id}')">
             <div class="col-lg-3 text-center">
                 <img src="${d.thumbnail_url}" class="img-fluid rounded-start">
             </div>
@@ -69,6 +70,9 @@ const displayNews = data => {
 
     countItemsDiv.classList.add('card');
     countItemsDiv.classList.add('my-4');
+    countItemsDiv.classList.add('border-0');
+    countItemsDiv.classList.add('shadow-sm');
+    countItemsDiv.classList.add('text-center');
     countItemsDiv.innerHTML = `
     <div class="card-body">
         <b>${countItems}</b> items have been found. 
