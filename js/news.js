@@ -43,15 +43,15 @@ const displayNews = data => {
                             </div>
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
-                            <i class="fa-solid fa-eye me-1"></i>
+                            <i class="fa-solid fa-eye me-1 text-primary"></i>
                             <b class="fs-8">${d.total_view === null ? '0' : d.total_view}k</b>
                         </div>
                         <div class="col-md-3 d-md-flex align-items-center">
-                            <i class="fa-solid fa-star me-1"></i>
+                            <i class="fa-solid fa-star me-1 text-warning"></i>
                             <b class="fs-8">${d.rating.number}</b>
                         </div>
                         <div class="col-md-1 col-xl-2 d-md-flex align-items-center">
-                            <i class="fa-solid fa-arrow-right-long"></i>
+                            <i class="fa-solid fa-arrow-right-long text-primary fs-4"></i>
                         </div>
                     </div>
                 </div>
